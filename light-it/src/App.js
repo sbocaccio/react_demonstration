@@ -1,6 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import myImage from './images/logo.jpeg';
+import aberturas from './images/Aberturas.png';
+import equipamiento from './images/Equipamiento.png';
+import terminaciones from './images/Terminaciones.png';
+
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import {
@@ -117,26 +121,31 @@ function SaveDropDown() {
 
 
 function DefaultSidebar() {
+    const fontStyle = {
+        'font-size': '0.60rem',
+        'line-height': '1rem'
+    }
     return (
-        <Card className="h-[calc(100vh-2rem)] w-full max-w-[8rem] p-4 shadow-xl shadow-blue-gray-900/5">
+        <Card className="h-[calc(100vh-2rem)] w-full max-w-[6.6rem] p-4 shadow-xl shadow-blue-gray-900/5">
             <List className="flex flex-col justify-center h-full"> {/* Use flex to center and expand items vertically */}
                 <ListItem className="flex flex-col items-center"> {/* Use flex to center the items */}
                     <ListItemPrefix>
-                        <PresentationChartBarIcon className="h-5 w-5" />
+                        <img src={aberturas} alt="My Image" className="h-6 w-6" />
+
                     </ListItemPrefix>
-                    Dashboard
+                    <div className="text-xs" style={fontStyle}>Aberturas</div>
                 </ListItem>
                 <ListItem className="flex flex-col items-center"> {/* Use flex to center the items */}
                     <ListItemPrefix>
-                        <ShoppingBagIcon className="h-5 w-5" />
+                        <img src={equipamiento} alt="My Image" className="h-6 w-6" />
                     </ListItemPrefix>
-                    E-Commerce
+                    <div className="text-xs" style={fontStyle}>Equipamiento</div>
                 </ListItem>
                 <ListItem className="flex flex-col items-center"> {/* Use flex to center the items */}
                     <ListItemPrefix>
-                        <InboxIcon className="h-5 w-5" />
+                        <img src={terminaciones} alt="My Image" className="h-6 w-6" />
                     </ListItemPrefix>
-                    Inbox
+                    <div className="text-xs" style={fontStyle}>Terminaciones</div>
                 </ListItem>
                 {/* Repeat this pattern for the rest of your list items */}
             </List>
