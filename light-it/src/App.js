@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import myImage from './images/logo.jpeg';
 
 function App() {
   return (
     <div className="App">
       <TopBar/>
       <header className="App-header">
-
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Chupame la ponga <code>src/App.js</code> and save to reload.
@@ -27,8 +27,9 @@ function App() {
 const TopBar = () => {
     return (
         <div className="bg-gray-800 text-white py-2">
-            <div className="container mx-auto flex justify-between items-center">
-                <a href="#" className="text-xl font-semibold">Logo</a>
+            <div className="container mx-auto py-2 flex justify-between items-center">
+                <img src={myImage} alt="My Image" className="max-w-xs h-auto" />
+
                 <nav>
                     <ul className="space-x-4">
                         <li className="inline-block"><a href="#" className="hover:text-gray-300">Home</a></li>
