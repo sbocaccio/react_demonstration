@@ -28,18 +28,21 @@ import {
 
 function App() {
   return (
+
     <div className="App">
-      <TopBar/>
+        <div style={{ backgroundColor:'#efefef'}}> {/* Set your desired background color here */}
+            {/* Your content goes here */}
+
+          <TopBar/>
       {/*<header className="App-header">*/}
-        <FijarButton/>
-
-        <DefaultSidebar/>
-
-        <FijarButton/>
+            <FijarButton/>
+            <DefaultSidebar/>
+            {/*<FijarButton/>*/}
 
         {/*<Expansible/>*/}
 
       {/*</header>*/}
+        </div>
     </div>
   );
 }
@@ -48,9 +51,9 @@ function App() {
 function FijarButton() {
     return (
         <div className="relative">
-            <div className="absolute top-0 right-0 p-4">
-                <button className="bg-white text-black px-4 py-2 rounded mb-2" style={{margin: '1em'}}>Fijar</button>
-                <button className="bg-white text-black px-4 py-2 rounded mb-2">Borrar</button>
+            <div className="absolute right-0 p-4">
+                <button className="bg-white text-black px-7 py-2 rounded mb-2" style={{margin: '1em'}}>Fijar</button>
+                <button className="bg-white text-black px-7 py-2 rounded mb-2">Borrar</button>
             </div>
         </div>
     );
