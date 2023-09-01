@@ -4,7 +4,7 @@ import myImage from './images/logo.jpeg';
 import aberturas from './images/Aberturas.png';
 import equipamiento from './images/Equipamiento.png';
 import terminaciones from './images/Terminaciones.png';
-
+import {useState} from "react";
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import {
@@ -31,11 +31,29 @@ function App() {
     <div className="App">
       <TopBar/>
       {/*<header className="App-header">*/}
+        <FijarButton/>
+
         <DefaultSidebar/>
+
+        <FijarButton/>
+
+        {/*<Expansible/>*/}
 
       {/*</header>*/}
     </div>
   );
+}
+
+
+function FijarButton() {
+    return (
+        <div className="relative">
+            <div className="absolute top-0 right-0 p-4">
+                <button className="bg-white text-black px-4 py-2 rounded mb-2" style={{margin: '1em'}}>Fijar</button>
+                <button className="bg-white text-black px-4 py-2 rounded mb-2">Borrar</button>
+            </div>
+        </div>
+    );
 }
 
 const TopBar = () => {
@@ -126,30 +144,77 @@ function DefaultSidebar() {
         'line-height': '1rem'
     }
     return (
-        <Card className="h-[calc(100vh-2rem)] w-full max-w-[6.6rem] p-4 shadow-xl shadow-blue-gray-900/5">
-            <List className="flex flex-col justify-center h-full"> {/* Use flex to center and expand items vertically */}
-                <ListItem className="flex flex-col items-center"> {/* Use flex to center the items */}
+        <Card className="h-[calc(100vh-2rem)] w-full max-w-[6rem] p-4 shadow-xl shadow-blue-gray-900/5">
+            <List className="flex flex-col justify-center h-full">
+                <ListItem className="flex flex-col items-center">
                     <ListItemPrefix>
                         <img src={aberturas} alt="My Image" className="h-6 w-6" />
-
                     </ListItemPrefix>
                     <div className="text-xs" style={fontStyle}>Aberturas</div>
                 </ListItem>
-                <ListItem className="flex flex-col items-center"> {/* Use flex to center the items */}
+                <ListItem className="flex flex-col items-center">
                     <ListItemPrefix>
                         <img src={equipamiento} alt="My Image" className="h-6 w-6" />
                     </ListItemPrefix>
                     <div className="text-xs" style={fontStyle}>Equipamiento</div>
                 </ListItem>
-                <ListItem className="flex flex-col items-center"> {/* Use flex to center the items */}
+                <ListItem className="flex flex-col items-center ">
                     <ListItemPrefix>
                         <img src={terminaciones} alt="My Image" className="h-6 w-6" />
                     </ListItemPrefix>
                     <div className="text-xs" style={fontStyle}>Terminaciones</div>
                 </ListItem>
-                {/* Repeat this pattern for the rest of your list items */}
             </List>
         </Card>
+    );
+}
+
+function Expansible() {
+    const [openSubmenu, setOpenSubmenu] = useState('ecommerce');
+
+    const handleItemClick = (item) => {
+        if (openSubmenu === item) {
+            // If the same item is clicked again, close the submenu
+            setOpenSubmenu(null);
+        } else {
+            // Open the submenu for the clicked item
+            setOpenSubmenu(item);
+        }
+    };
+
+    return (
+        <div className="bg-gray-900 text-white h-screen w-1/4">
+            <ul className="py-4">
+                <li
+                    className={`px-4 py-2 cursor-pointer ${
+                        openSubmenu === 'dashboard' ? 'bg-blue-500' : ''
+                    }`}
+                    onClick={() => handleItemClick('dashboard')}
+                >
+                    Dashboard
+                </li>
+                <li
+                    className={`px-4 py-2 cursor-pointer ${
+                        openSubmenu === 'ecommerce' ? 'bg-blue-500' : ''
+                    }`}
+                    onClick={() => handleItemClick('ecommerce')}
+                >
+                    E-Commerce
+                </li>
+                {/* Add more items here */}
+            </ul>
+            {openSubmenu === 'dashboard' && (
+                <div className="bg-gray-800 p-4">
+                    {/* Content for the Dashboard submenu */}
+                </div>
+            )}
+            {openSubmenu === 'ecommerce' && (
+                <div className="bg-gray-800 p-4">
+                    {/* Content for the E-Commerce submenu */}
+                </div>
+            )}
+            {/* Add more submenu content as needed */}
+        </div>
     );
 }
 
