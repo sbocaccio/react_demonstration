@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Banner/>
+      <TopBar/>
       <header className="App-header">
 
         <img src={logo} className="App-logo" alt="logo" />
@@ -24,16 +24,22 @@ function App() {
   );
 }
 
-const Banner = () => {
-  return (
-      <div className="bg-blue-700 text-white py-6">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-semibold mb-2">Special Offer!</h2>
-          <p className="text-lg mb-4">Get 20% off on all products this week.</p>
-            <button className="bg-white text-blue-700 py-2 px-4 rounded">Shop Now</button>
+const TopBar = () => {
+    return (
+        <div className="bg-gray-800 text-white py-2">
+            <div className="container mx-auto flex justify-between items-center">
+                <a href="#" className="text-xl font-semibold">Logo</a>
+                <nav>
+                    <ul className="space-x-4">
+                        <li className="inline-block"><a href="#" className="hover:text-gray-300">Home</a></li>
+                        <li className="inline-block"><a href="#" className="hover:text-gray-300">About</a></li>
+                        <li className="inline-block"><a href="#" className="hover:text-gray-300">Services</a></li>
+                        <li className="inline-block"><a href="#" className="hover:text-gray-300">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-      </div>
-  );
+    );
 };
 
 
