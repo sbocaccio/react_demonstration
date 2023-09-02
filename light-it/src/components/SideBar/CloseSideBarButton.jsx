@@ -1,6 +1,6 @@
 import activo from "../../images/activo.png";
 
-export default function CloseSideBarButton() {
+export default function CloseSideBarButton({setIsCollapsibleOpen}) {
         const containerStyle = {
             position: 'relative',
             height: '100vh',
@@ -22,7 +22,6 @@ export default function CloseSideBarButton() {
             height: 'auto',
         };
 
-
         const CloseSideBarButtonStyle = {
             position: 'absolute',
             top: '300px',
@@ -39,7 +38,7 @@ export default function CloseSideBarButton() {
         return (
             <div style={containerStyle}>
                 <div style={CloseSideBarButtonStyle}>
-                    <button style={imageContainerStyle}>
+                    <button style={imageContainerStyle} onClick={() => {setIsCollapsibleOpen(false)}}>
                         <img src={activo} style={imageStyle}/>
                     </button>
                 </div>
