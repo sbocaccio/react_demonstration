@@ -5,7 +5,10 @@ import aberturas from './images/Aberturas.png';
 import equipamiento from './images/Equipamiento.png';
 import terminaciones from './images/Terminaciones.png';
 import {useState} from "react";
+
 import activo_derecha from './images/activo_derecha.png';
+import SignoMas from './images/SignoMas.png'
+import SignoMenos from './images/SignoMenos.png'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import {
@@ -39,9 +42,17 @@ function App() {
             <TopBar/>
       {/*<header className="App-header">*/}
             <FijarButton/>
+            <CustomArrowButtons/>
+            <CustomArrowButtons2/>
+
+
 
             <DefaultSidebar/>
             {/*<FijarButton/>*/}
+
+
+            {/*<PlusMinusButton/>*/}
+
 
         {/*<Expansible/>*/}
 
@@ -51,6 +62,60 @@ function App() {
   );
 }
 
+function CustomArrowButtons() {
+    const buttonsStyle = {
+        width: '24px',
+        height: '24px',
+        padding: '0px'
+
+    }
+    return (
+        <div className="">
+            <div className="absolute right-0  p-4" style={{ bottom: '-60px' }}>
+            <div className="arrow-button-row" style={{ marginBottom: '-10px', justifyContent: 'space-between', 'row-gap': 0 }}>
+                    <button className="arrow-button">
+                        <img src={myImage} alt="Up Arrow" style={buttonsStyle} />
+                    </button>
+                    <button className="arrow-button">
+                        <img src={myImage} alt="Down Arrow" style={buttonsStyle} />
+                    </button>
+                </div>
+                <div className="arrow-button-row" style={{ marginBottom: '0', justifyContent: 'space-between',  }}>
+                    <button className="arrow-button">
+                        <img src={myImage} alt="Left Arrow" style={buttonsStyle} />
+                    </button>
+                    <button className="arrow-button">
+                        <img src={myImage} alt="Right Arrow" style={buttonsStyle} />
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+function CustomArrowButtons2() {
+    const buttonsStyle = {
+        width: '24px',
+        height: '24px',
+        padding: '0px'
+    }
+    return (
+        <div className="">
+            <div className="absolute p-4" style={{ bottom: '-60px', right: '60px' }}>
+                <div className="arrow-button-row" style={{ marginBottom: '-10px', justifyContent: 'center', 'row-gap': 0 }}>
+                    <button className="arrow-button">
+                        <img src={SignoMas} alt="Up Arrow" style={buttonsStyle} />
+                    </button>
+                </div>
+                <div className="arrow-button-row" style={{ marginBottom: '0', justifyContent: 'center',  }}>
+                    <button className="arrow-button">
+                        <img src={SignoMenos} alt="Left Arrow" style={buttonsStyle} />
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+};
 
 function FijarButton() {
     return (
@@ -62,6 +127,20 @@ function FijarButton() {
         </div>
     );
 }
+
+function PlusMinusButton() {
+    return (
+        <div className="leaflet-control-zoom leaflet-bar leaflet-control"><a className="leaflet-control-zoom-in"
+                                                                             href="#" title="Zoom in"
+                                                                             role="button"
+                                                                             aria-label="Zoom in">+</a><a
+            className="leaflet-control-zoom-out" href="#" title="Zoom out" role="button"
+            aria-label="Zoom out">−</a>
+        </div>
+    )
+}
+
+
 
 const TopBar = () => {
     const topBarStyle = {
