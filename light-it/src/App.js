@@ -4,6 +4,7 @@ import myImage from './images/logo.jpeg';
 import aberturas from './images/Aberturas.png';
 import equipamiento from './images/Equipamiento.png';
 import terminaciones from './images/Terminaciones.png';
+import activo from './images/activo.png'
 import {useState} from "react";
 
 import activo_derecha from './images/activo_derecha.png';
@@ -117,6 +118,53 @@ function CustomArrowButtons2() {
     );
 };
 
+function Trapezoid() {
+    const containerStyle = {
+        position: 'relative',
+        height: '100vh', // Adjust the height as needed
+        display: 'flex',
+        justifyContent: 'flex-end', // Align to the right
+        alignItems: 'center', // Center vertically
+
+    };
+
+    const imageContainerStyle = {
+        position: 'absolute', // Set to absolute positioning
+        right: '0', // Align to the right
+        transform: 'translateY(30%)', // Center vertically
+    };
+
+    const imageStyle = {
+        transform: 'rotate(-90deg)', // Rotate the image back by -90 degrees
+        width: '50%', // Make sure the image fits within the container
+        height: 'auto', // Maintain aspect ratio
+    };
+
+
+    const trapezoidStyle = {
+        position: 'absolute',
+        top: '300px',
+        right: '-54px', // Adjust this value for precise positioning
+        transformOrigin: 'top right',
+        transform: 'rotate(90deg)', // Rotate by 90 degrees
+        borderBottom: '30px solid #f7f7f7', // Adjust height here
+        borderLeft: '15px solid transparent', // Adjust width here
+        borderRight: '15px solid transparent', // Adjust width here
+        height: '0',
+        width: '80px', // Adjust width here
+    };
+
+    return (
+        <div style={containerStyle}>
+            <div style={trapezoidStyle}>
+                <div style={imageContainerStyle} >
+                    <img src={activo} style={imageStyle}/>
+                </div>
+            </div>
+        </div>
+    );
+};
+
 function FijarButton() {
     return (
         <div className="relative">
@@ -127,19 +175,6 @@ function FijarButton() {
         </div>
     );
 }
-
-function PlusMinusButton() {
-    return (
-        <div className="leaflet-control-zoom leaflet-bar leaflet-control"><a className="leaflet-control-zoom-in"
-                                                                             href="#" title="Zoom in"
-                                                                             role="button"
-                                                                             aria-label="Zoom in">+</a><a
-            className="leaflet-control-zoom-out" href="#" title="Zoom out" role="button"
-            aria-label="Zoom out">−</a>
-        </div>
-    )
-}
-
 
 
 const TopBar = () => {
@@ -232,7 +267,7 @@ function DefaultSidebar() {
         <div className="flex">
 
         <Card className="h-[calc(100vh-2rem)] w-full max-w-[6rem] p-4 shadow-xl shadow-blue-gray-900/5">
-                <List className="flex flex-col justify-center h-full">
+            <List className="flex flex-col justify-center h-full">
                     <ListItem className="flex flex-col items-center">
                         <ListItemPrefix>
                             <img src={aberturas} alt="My Image" className="h-6 w-6" />
@@ -286,6 +321,7 @@ function DefaultSidebar() {
                         className="ml-2 cursor-pointer w-3 h-3"
                     />
                 </button>
+                <Trapezoid/>
             </Card>
         </div>
     );
