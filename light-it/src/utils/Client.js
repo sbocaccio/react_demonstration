@@ -4,9 +4,7 @@ export default class Client {
     static EQUIPAMIENTO_ENDPOINT = '/equipamiento';
     static TERMINACIONES_ENDPOINT = '/terminaciones';
 
-    fetchAberturas() {
-        // You can access BASE_URL using Client.BASE_URL
-        const url = Client.BASE_URL + Client.ABERTURAS_ENDPOINT;
+    fetch(url) {
         fetch(url)
             .then((response) => {
                 if (!response.ok) {
@@ -22,4 +20,11 @@ export default class Client {
                 console.error('Error:', error); // Should handle the error.
             });
     }
+
+    fetchAberturas() {
+        // You can access BASE_URL using Client.BASE_URL
+        const url = Client.BASE_URL + Client.ABERTURAS_ENDPOINT;
+        this.fetch(url);
+    }
+    fetchEquipamiento
 }
