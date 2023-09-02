@@ -5,6 +5,7 @@ import aberturas from './images/Aberturas.png';
 import equipamiento from './images/Equipamiento.png';
 import terminaciones from './images/Terminaciones.png';
 import {useState} from "react";
+import activo_derecha from './images/activo_derecha.png';
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import {
@@ -24,7 +25,9 @@ import {
     InboxIcon,
     PowerIcon,
 } from "@heroicons/react/24/solid";
-
+import { Fragment } from 'react'
+import { Dialog } from '@headlessui/react'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 
 function App() {
   return (
@@ -33,9 +36,10 @@ function App() {
         <div style={{ backgroundColor:'#efefef'}}> {/* Set your desired background color here */}
             {/* Your content goes here */}
 
-          <TopBar/>
+            <TopBar/>
       {/*<header className="App-header">*/}
             <FijarButton/>
+
             <DefaultSidebar/>
             {/*<FijarButton/>*/}
 
@@ -61,9 +65,8 @@ function FijarButton() {
 
 const TopBar = () => {
     const topBarStyle = {
-        backgroundColor: '#333333', // Set the background color to #333333
-        color: 'white', // Set the text color to white or any desired color
-
+        backgroundColor: '#333333',
+        color: 'white',
     };
 
     return (
@@ -86,7 +89,7 @@ function SaveDropDown() {
     return (
         <Menu as="div" className="relative inline-block text-left">
             <div>
-                <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
                     Guardar y salir
                     <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
 
@@ -147,76 +150,64 @@ function DefaultSidebar() {
         'line-height': '1rem'
     }
     return (
+        <div className="flex">
+
         <Card className="h-[calc(100vh-2rem)] w-full max-w-[6rem] p-4 shadow-xl shadow-blue-gray-900/5">
-            <List className="flex flex-col justify-center h-full">
-                <ListItem className="flex flex-col items-center">
-                    <ListItemPrefix>
-                        <img src={aberturas} alt="My Image" className="h-6 w-6" />
-                    </ListItemPrefix>
-                    <div className="text-xs" style={fontStyle}>Aberturas</div>
-                </ListItem>
-                <ListItem className="flex flex-col items-center">
-                    <ListItemPrefix>
-                        <img src={equipamiento} alt="My Image" className="h-6 w-6" />
-                    </ListItemPrefix>
-                    <div className="text-xs" style={fontStyle}>Equipamiento</div>
-                </ListItem>
-                <ListItem className="flex flex-col items-center ">
-                    <ListItemPrefix>
-                        <img src={terminaciones} alt="My Image" className="h-6 w-6" />
-                    </ListItemPrefix>
-                    <div className="text-xs" style={fontStyle}>Terminaciones</div>
-                </ListItem>
-            </List>
-        </Card>
-    );
-}
+                <List className="flex flex-col justify-center h-full">
+                    <ListItem className="flex flex-col items-center">
+                        <ListItemPrefix>
+                            <img src={aberturas} alt="My Image" className="h-6 w-6" />
+                        </ListItemPrefix>
+                        <div className="text-xs" style={fontStyle}>Aberturas</div>
+                    </ListItem>
+                    <ListItem className="flex flex-col items-center">
+                        <ListItemPrefix>
+                            <img src={equipamiento} alt="My Image" className="h-6 w-6" />
+                        </ListItemPrefix>
+                        <div className="text-xs" style={fontStyle}>Equipamiento</div>
 
-function Expansible() {
-    const [openSubmenu, setOpenSubmenu] = useState('ecommerce');
+                    </ListItem>
+                    <ListItem className="flex flex-col items-center ">
+                        <ListItemPrefix>
+                            <img src={terminaciones} alt="My Image" className="h-6 w-6" />
+                        </ListItemPrefix>
+                        <div className="text-xs" style={fontStyle}>Terminaciones</div>
+                    </ListItem>
+                </List>
+            </Card>
 
-    const handleItemClick = (item) => {
-        if (openSubmenu === item) {
-            // If the same item is clicked again, close the submenu
-            setOpenSubmenu(null);
-        } else {
-            // Open the submenu for the clicked item
-            setOpenSubmenu(item);
-        }
-    };
+            <Card className="h-[calc(100vh-2rem)] w-full max-w-[30rem] p-6 shadow-xl bg-gray-100">
+                <p className="font-bold text-left">Aberturas</p>
 
-    return (
-        <div className="bg-gray-900 text-white h-screen w-1/4">
-            <ul className="py-4">
-                <li
-                    className={`px-4 py-2 cursor-pointer ${
-                        openSubmenu === 'dashboard' ? 'bg-blue-500' : ''
-                    }`}
-                    onClick={() => handleItemClick('dashboard')}
+                <button
+                    className="shadow-blue-gray-900/5 text-black active:bg-gray-300 text-xs px-3 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none mb-4 ease-linear transition-all duration-150 text-left flex items-center justify-between"
+                    type="button"
                 >
-                    Dashboard
-                </li>
-                <li
-                    className={`px-4 py-2 cursor-pointer ${
-                        openSubmenu === 'ecommerce' ? 'bg-blue-500' : ''
-                    }`}
-                    onClick={() => handleItemClick('ecommerce')}
+                    <div className="text-xs text-grey font-semibold">Ventanas</div>
+                    <img
+                        src={activo_derecha}
+                        alt="Image Description"
+                        onClick={() => {
+                            console.log('algo')
+                        }}
+                        className="ml-2 cursor-pointer w-3 h-3"
+                    />
+                </button>
+                <button
+                    className="shadow-blue-gray-900/5 text-black active:bg-gray-300 text-xs px-3 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none mb-4 ease-linear transition-all duration-150 text-left flex items-center justify-between"
+                    type="button"
                 >
-                    E-Commerce
-                </li>
-                {/* Add more items here */}
-            </ul>
-            {openSubmenu === 'dashboard' && (
-                <div className="bg-gray-800 p-4">
-                    {/* Content for the Dashboard submenu */}
-                </div>
-            )}
-            {openSubmenu === 'ecommerce' && (
-                <div className="bg-gray-800 p-4">
-                    {/* Content for the E-Commerce submenu */}
-                </div>
-            )}
-            {/* Add more submenu content as needed */}
+                    <div className="text-xs text-grey font-semibold">Ventanas</div>
+                    <img
+                        src={activo_derecha}
+                        alt="Image Description"
+                        onClick={() => {
+                            console.log('algo')
+                        }}
+                        className="ml-2 cursor-pointer w-3 h-3"
+                    />
+                </button>
+            </Card>
         </div>
     );
 }
