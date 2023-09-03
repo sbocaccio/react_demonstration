@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react_demonstration/tree/main/light-it/static/css/main.0736add0.css",
+    "main.js": "/react_demonstration/tree/main/light-it/static/js/main.07b441d3.js",
+    "static/js/787.6f9dbd1b.chunk.js": "/react_demonstration/tree/main/light-it/static/js/787.6f9dbd1b.chunk.js",
+    "index.html": "/react_demonstration/tree/main/light-it/index.html",
+    "main.0736add0.css.map": "/react_demonstration/tree/main/light-it/static/css/main.0736add0.css.map",
+    "main.07b441d3.js.map": "/react_demonstration/tree/main/light-it/static/js/main.07b441d3.js.map",
+    "787.6f9dbd1b.chunk.js.map": "/react_demonstration/tree/main/light-it/static/js/787.6f9dbd1b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0736add0.css",
+    "static/js/main.07b441d3.js"
+  ]
+}
