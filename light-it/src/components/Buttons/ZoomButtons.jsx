@@ -7,7 +7,7 @@ export default function ZoomButtons() {
             height: '24px',
             padding: '0px'
         }
-        return (
+        return ( // TODO: No se ve igual a como muestra la imagen. Decido no hacerlo en este momento.
             <div className="">
                 <div className="absolute p-4" style={{ bottom: '-60px', right: '60px' }}>
                     <div className="arrow-button-row" style={{ marginBottom: '-10px', justifyContent: 'center'}}>

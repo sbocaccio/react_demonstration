@@ -2,7 +2,7 @@ import {Card, List, ListItem, ListItemPrefix} from "@material-tailwind/react";
 import aberturas from "../../images/Aberturas.png";
 import equipamiento from "../../images/Equipamiento.png";
 import terminaciones from "../../images/Terminaciones.png";
-import { SideBarItems } from '../../constants/SideBarItems';
+import {SideBarMenuCategories } from '../../constants/SideBarMenuCategories';
 import {useEffect} from "react";
 
 export default function SideBarMenu({setSelectedCaterogy, setClickedOnCategory}) {
@@ -11,7 +11,7 @@ export default function SideBarMenu({setSelectedCaterogy, setClickedOnCategory})
         setClickedOnCategory(false);
     })
 
-    const menuCategories = [{image: aberturas, text: SideBarItems.Aberturas }, {image: equipamiento, text: SideBarItems.Equipamiento }, {image: terminaciones, text: SideBarItems.Terminaciones}]
+    const menuCategories = [{image: aberturas, text: SideBarMenuCategories.Aberturas }, {image: equipamiento, text: SideBarMenuCategories.Equipamiento }, {image: terminaciones, text: SideBarMenuCategories.Terminaciones}]
     const fontStyle = {
         'fontSize': '0.60rem',
         'lineHeight': '1rem'

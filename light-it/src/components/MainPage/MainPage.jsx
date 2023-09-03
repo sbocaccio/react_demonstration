@@ -5,8 +5,9 @@ import ZoomButtons from "../Buttons/ZoomButtons";
 import Sidebar from "../SideBar/SideBar";
 
 export default function MainPage(){
+    const BACKGROUND_COLOR = '#efefef';
     return (
-    <div style={{ backgroundColor:'#efefef'}}>
+    <div style={{ backgroundColor: BACKGROUND_COLOR}}>
         <TopBar/>
         <ActionBar/>
         <MoveButtons/>

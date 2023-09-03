@@ -1,4 +1,4 @@
-import {Card, List, ListItem, ListItemPrefix} from "@material-tailwind/react";
+import {List, ListItem} from "@material-tailwind/react";
 import React from "react";
 
 

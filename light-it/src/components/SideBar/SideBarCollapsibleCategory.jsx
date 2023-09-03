@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CategoriesClient from './helpers/CategoriesClient';
-import {SideBarItems} from "../../constants/SideBarItems";
+import {SideBarMenuCategories} from "../../constants/SideBarMenuCategories";
 import SideBarCollapsibleCategoryItem from "./SideBarCollapsibleCategoryItem";
 import SideBarCollapsibleCategoryItems from "./SideBarCollapsibleCategoryItems";
 
@@ -15,9 +15,9 @@ export default function SideBarCollapsibleCategory({selectedCategory, clickedOnC
         const fetchData = async () => {
             const categoriesClient = new CategoriesClient();
             const itemToClientCalls= {
-                [SideBarItems.Aberturas]: categoriesClient.getItemsForAberturas,
-                [SideBarItems.Equipamiento]: categoriesClient.getItemsForEquipamiento,
-                [SideBarItems.Terminaciones]: categoriesClient.getItemsForTerminaciones,
+                [SideBarMenuCategories.Aberturas]: categoriesClient.getItemsForAberturas,
+                [SideBarMenuCategories.Equipamiento]: categoriesClient.getItemsForEquipamiento,
+                [SideBarMenuCategories.Terminaciones]: categoriesClient.getItemsForTerminaciones,
             };
 
             const clientCall = itemToClientCalls[selectedCategory];

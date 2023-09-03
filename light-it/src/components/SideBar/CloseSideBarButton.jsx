@@ -1,4 +1,4 @@
-import activo from "../../images/activo.png";
+import Activo from "../../images/activo.png";
 
 export default function CloseSideBarButton({setSelectedCaterogy}) {
         const containerStyle = {
@@ -38,7 +38,7 @@ export default function CloseSideBarButton({setSelectedCaterogy}) {
             <div style={containerStyle}>
                 <div style={CloseSideBarButtonStyle}>
                     <button style={imageContainerStyle} onClick={() => {setSelectedCaterogy(null)}}>
-                        <img src={activo} style={imageStyle}/>
+                        <img src={Activo} style={imageStyle}/>
                     </button>
                 </div>
             </div>
