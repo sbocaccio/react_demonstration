@@ -7,7 +7,6 @@ export default function CloseSideBarButton({setSelectedCaterogy}) {
             display: 'flex',
             justifyContent: 'flex-end',
             alignItems: 'center',
-
         };
 
         const imageContainerStyle = {
