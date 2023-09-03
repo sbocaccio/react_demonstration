@@ -2,7 +2,7 @@ import activo from "../../images/activo.png";
 
 export default function CloseSideBarButton({setSelectedItem}) {
         const containerStyle = {
-            position: 'relative',
+            position: 'absolute',
             height: '100vh',
             display: 'flex',
             justifyContent: 'flex-end',
@@ -24,8 +24,8 @@ export default function CloseSideBarButton({setSelectedItem}) {
 
         const CloseSideBarButtonStyle = {
             position: 'absolute',
-            top: '300px',
-            right: '-54px',
+            top: '400px',
+            right: '-486px',
             transformOrigin: 'top right',
             transform: 'rotate(90deg)',
             borderBottom: '30px solid #f7f7f7',

@@ -10,7 +10,7 @@ export default function ZoomButtons() {
         return (
             <div className="">
                 <div className="absolute p-4" style={{ bottom: '-60px', right: '60px' }}>
-                    <div className="arrow-button-row" style={{ marginBottom: '-10px', justifyContent: 'center', 'rowGap': 0 }}>
+                    <div className="arrow-button-row" style={{ marginBottom: '-10px', justifyContent: 'center'}}>
                         <button className="arrow-button">
                             <img src={SignoMas} alt="Up Arrow" style={buttonsStyle} />
                         </button>
