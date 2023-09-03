@@ -4,12 +4,12 @@ import CloseSideBarButton from "./CloseSideBarButton";
 import SideBarCollapsibleCategory from "./SideBarCollapsibleCategory";
 
 
-export default function SideBarCollapsible({selectedItem, setSelectedItem}){
+export default function SideBarCollapsible({selectedCategory, setSelectedCaterogy}){
     return (
-        selectedItem ?
+        selectedCategory ?
         <Card className="h-[calc(100vh-2rem)] w-full max-w-[30rem] p-6 shadow-xl bg-gray-100 ">
-            <SideBarCollapsibleCategory selectedItem={selectedItem}/>
-            <CloseSideBarButton setSelectedItem={setSelectedItem}/>
+            <SideBarCollapsibleCategory selectedCategory={selectedCategory}/>
+            <CloseSideBarButton setSelectedCaterogy={setSelectedCaterogy}/>
         </Card> : null
     )
 }

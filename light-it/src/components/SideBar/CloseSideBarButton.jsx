@@ -1,6 +1,6 @@
 import activo from "../../images/activo.png";
 
-export default function CloseSideBarButton({setSelectedItem}) {
+export default function CloseSideBarButton({setSelectedCaterogy}) {
         const containerStyle = {
             position: 'absolute',
             height: '100vh',
@@ -38,7 +38,7 @@ export default function CloseSideBarButton({setSelectedItem}) {
         return (
             <div style={containerStyle}>
                 <div style={CloseSideBarButtonStyle}>
-                    <button style={imageContainerStyle} onClick={() => {setSelectedItem(null)}}>
+                    <button style={imageContainerStyle} onClick={() => {setSelectedCaterogy(null)}}>
                         <img src={activo} style={imageStyle}/>
                     </button>
                 </div>
