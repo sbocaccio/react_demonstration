@@ -13,7 +13,6 @@ export default function MoveButtons() {
         const y = event.clientY - buttonRect.top;
         const buttonWidth = buttonRect.width;
         const buttonHeight = buttonRect.height;
-        const windowWidth = window.innerWidth;
 
         if (y < buttonHeight / 3) {
             console.log('Clickeaste Arriba');
