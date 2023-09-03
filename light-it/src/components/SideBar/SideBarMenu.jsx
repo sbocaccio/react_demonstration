@@ -14,6 +14,7 @@ export default function SideBarMenu({setSelectedCaterogy}) {
     }
     return (
         <Card className="h-[calc(100vh-2rem)] w-full max-w-[6rem] p-4 shadow-xl shadow-blue-gray-900/5">
+
             <List className="flex flex-col justify-center h-full">
                 {menuCategories.map((menuItem, index) => (
                     <ListItem key={index} className="flex flex-col items-center" onClick={()=>{

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CategoriesClient from './helpers/CategoriesClient';
 import {SideBarItems} from "../../constants/SideBarItems";
-import {ListItem, ListItemPrefix} from "@material-tailwind/react";
 import Activo from '../../images/activo.png'
 import SideBarCollapsibleCategoryItem from "./SideBarCollapsibleCategoryItem";
 
@@ -11,7 +10,7 @@ export default function SideBarCollapsibleCategory({selectedCategory}) {
 
     useEffect(() => {
         setSelectedItem(null);
-        
+
         const fetchData = async () => {
             const categoriesClient = new CategoriesClient();
             const itemToClientCalls= {
