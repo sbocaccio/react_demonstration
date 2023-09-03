@@ -1,1 +1,3 @@
-# react_demonstration
+# Demostración código React + Tailwind
+
+Sebastián Bocaccio.
