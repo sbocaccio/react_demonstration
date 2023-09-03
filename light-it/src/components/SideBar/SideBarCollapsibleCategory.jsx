@@ -9,6 +9,7 @@ export default function SideBarCollapsibleCategory({selectedCategory}) {
     const [selectedItem, setSelectedItem] = useState(null)
 
     useEffect(() => {
+        console.log('entre')
         setSelectedItem(null);
 
         const fetchData = async () => {
@@ -31,7 +32,7 @@ export default function SideBarCollapsibleCategory({selectedCategory}) {
     }, [selectedCategory]);
 
 
-    return !selectedItem? (
+    return !selectedItem? ( // TODO: Show a Spinner while fetching data.
         <>
             <p className="font-bold text-left">{selectedCategory}</p>
             {items.map((item, index) => (
@@ -39,7 +40,7 @@ export default function SideBarCollapsibleCategory({selectedCategory}) {
                     <button
                         className="shadow-blue-gray-900/5 text-black active:bg-gray-300 text-xs px-3 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none mb-4 ease-linear transition-all duration-150 text-left flex items-center justify-between"
                         type="button"
-                        onClick={() => { console.log(item); setSelectedItem(item); }}
+                        onClick={() => {setSelectedItem(item); }}
                     >
                         <div className="text-xs text-grey font-semibold">{item.name}</div>
                         <img
