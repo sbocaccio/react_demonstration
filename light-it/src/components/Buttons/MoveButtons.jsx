@@ -15,11 +15,11 @@ export default function MoveButtons() {
         const buttonHeight = buttonRect.height;
         const windowWidth = window.innerWidth;
 
-        if (x < buttonWidth / 2 && y < buttonHeight / 3) {
+        if (y < buttonHeight / 3) {
             console.log('Clickeaste Arriba');
-        } else if (x > buttonWidth / 2 && y <= (2 / 3) * buttonHeight) {
+        } else if (x > (2 / 3) * buttonWidth  && y >= buttonHeight / 3 && y <= (2 / 3) * buttonHeight) {
             console.log('Clickeaste Derecha');
-        } else if (x <= buttonWidth / 2 && y >= buttonHeight / 3 && y <= (2 / 3) * buttonHeight && x <= windowWidth / 2) {
+        } else if (x < (2 / 3) * buttonWidth  && y >= buttonHeight / 3 && y <= (2 / 3) * buttonHeight) {
             console.log('Clickeaste Izquierda');
         } else{
             console.log('Clickeaste Abajo');
