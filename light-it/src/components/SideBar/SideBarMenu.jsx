@@ -22,7 +22,7 @@ export default function SideBarMenu({setSelectedCaterogy, setClickedOnCategory})
         <Card className="h-[calc(100vh-2rem)] w-full max-w-[6rem] p-1 shadow-xl shadow-blue-gray-900/5">
             <List className="flex flex-col justify-center h-full">
                 {menuCategories.map((menuItem, index) => (
-                    <ListItem key={index} className="flex-col items-center" style={{marginTop: '-20px'}} onClick={()=>{
+                    <ListItem key={index} className="flex-col items-center" style={{marginTop: '5px'}} onClick={()=>{
                         setClickedOnCategory(true);
                         setSelectedCaterogy(menuCategories[index].text)} }>
                         <ListItemPrefix>
