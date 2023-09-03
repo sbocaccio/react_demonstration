@@ -7,10 +7,13 @@ import SideBarCollapsibleCategoryItem from "./SideBarCollapsibleCategoryItem";
 export default function SideBarCollapsibleCategory({selectedCategory}) {
     const [items, setItems] = useState([]);
     const [selectedItem, setSelectedItem] = useState(null)
+    const [clickedOnCategory, setClickedOnCategory] = useState(false)
+
 
     useEffect(() => {
         console.log('entre')
         setSelectedItem(null);
+        setClickedOnCategory(false);
 
         const fetchData = async () => {
             const categoriesClient = new CategoriesClient();
@@ -29,7 +32,7 @@ export default function SideBarCollapsibleCategory({selectedCategory}) {
             }
         };
         fetchData();
-    }, [selectedCategory]);
+    }, [selectedCategory, clickedOnCategory]);
 
 
     return !selectedItem? ( // TODO: Show a Spinner while fetching data.
@@ -40,7 +43,7 @@ export default function SideBarCollapsibleCategory({selectedCategory}) {
                     <button
                         className="shadow-blue-gray-900/5 text-black active:bg-gray-300 text-xs px-3 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none mb-4 ease-linear transition-all duration-150 text-left flex items-center justify-between"
                         type="button"
-                        onClick={() => {setSelectedItem(item); }}
+                        onClick={() => {setClickedOnCategory(true); setSelectedItem(item); }}
                     >
                         <div className="text-xs text-grey font-semibold">{item.name}</div>
                         <img
