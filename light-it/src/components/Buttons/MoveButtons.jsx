@@ -10,7 +10,7 @@ export default function MoveButtons() {
     return (
         <div className="">
             <div className="absolute right-0  p-4" style={{ bottom: '-60px' }}>
-                <div className="arrow-button-row" style={{ marginBottom: '-10px', justifyContent: 'space-between', 'row-gap': 0 }}>
+                <div className="arrow-button-row" style={{ marginBottom: '-10px', justifyContent: 'space-between', 'rowGap': 0 }}>
                     <button className="arrow-button">
                         <img src={myImage} alt="Up Arrow" style={buttonsStyle} />
                     </button>
