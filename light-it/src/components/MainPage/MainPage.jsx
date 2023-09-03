@@ -1,5 +1,5 @@
 import TopBar from "../TopBar/TopBar";
-import ActionBar from "../ActionBar";
+import ActionBar from "../ActionBar/ActionBar";
 import MoveButtons from "../Buttons/MoveButtons";
 import ZoomButtons from "../Buttons/ZoomButtons";
 import Sidebar from "../SideBar/SideBar";
